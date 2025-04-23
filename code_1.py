@@ -1,24 +1,43 @@
 import random
 print('\n')
 songs = [
-    'SONG 0',
-    'SONG 1',
-    'SONG 2',
-    'SONG 3',
+    "Luther",
+    "Die With A Smile",
+    "Nokia",
+    "Pink Pony Club",
+    "Ordinary",
+    "A Bar Song",
+    "Lose Control",
+    "All The Way",
+    "Beautiful Things",
+    "I'm The Problem",
 ]
 
 lyrics = [
-    'lyric 0 uju',
-    'lyric 1',
-    'lyric 2',
-    'lyric 3',
+    "If this world was mine, I'd take your dreams and make 'em multiply",
+    "I'd wanna hold you just for a while and die with a smile. If the world was ending, I'd wanna be next to you",
+    "Who's callin' my phone? Is it Stacy? Is it Becky? Is it Keisha? Is it Ellie? Was it Dani? Is it PARTY? Where's the function?",
+    "God, what have you done? You're a pink pony girl. And you dance at the club. Oh mama, I'm just having fun",
+    "On the edge of your knife, stayin' drunk on your vine. The angels up in the clouds are jealous, knowin' we found",
+    "lyric 5",
+    "lyric 6",
+    "lyric 7",
+    "lyric 8",
+    "lyric 9",
+
 ]
 
 artists = [
-    'artist 0',
-    'artist 1',
-    'artist 2',
-    'artist 3',
+    "Kendrick Lamar",
+    "Lady Gaga",
+    "Drake",
+    "Chappell Roan",
+    "Alex Warren",
+    "Shaboozey",
+    "Teddy Swims",
+    "BigXthaPlug",
+    "Benson Boone",
+    "Morgan Wallen",
 ]
 
 
