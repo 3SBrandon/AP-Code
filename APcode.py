@@ -40,11 +40,16 @@ artists = [
     "Morgan Wallen",
 ]
 
-
 def UI():
     opt = input('What game would you like to play. 1)Finish the lyric 2)Guess the song or 3)Guess the artist: ')
     rounds = input('How many rounds would you like to play: ')
-    print('\n')
+
+    try:
+        rounds = int(rounds)
+    except ValueError:
+        print('INPUT ERROR')
+        UI()
+
     if opt == '1':
         score = 0
         for i in range(int(rounds)):
@@ -69,7 +74,10 @@ def UI():
             print('\n')
         print(f'Your final score is: {score}')
         again()
-    
+    else: 
+        print('INPUT ERROR')
+        UI()
+
 def again():
     quben = input('Do you want to play another game? Yes or No: ').upper()
     if quben == 'YES':
@@ -130,8 +138,6 @@ def guessArtist():
         point = 0
     return point
     
-
-
 UI()
 
 
