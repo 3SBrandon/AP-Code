@@ -14,17 +14,16 @@ songs = [
 ]
 
 lyrics = [
-    "If this world was mine, I'd take your dreams and make 'em multiply",
-    "I'd wanna hold you just for a while and die with a smile. If the world was ending, I'd wanna be next to you",
-    "Who's callin' my phone? Is it Stacy? Is it Becky? Is it Keisha? Is it Ellie? Was it Dani? Is it PARTY? Where's the function?",
-    "God, what have you done? You're a pink pony girl. And you dance at the club. Oh mama, I'm just having fun",
-    "On the edge of your knife, stayin' drunk on your vine. The angels up in the clouds are jealous, knowin' we found",
-    "lyric 5",
-    "lyric 6",
-    "lyric 7",
-    "lyric 8",
-    "lyric 9",
-
+    "If this world was mine I'd take your dreams and make 'em multiply",
+    "I'd wanna hold you just for a while and die with a smile If the world was ending I'd wanna be next to you",
+    "Who's callin' my phone Is it Stacy Is it Becky Is it Keisha Is it Ellie Was it Dani Is it PARTY Where's the function",
+    "God what have you done You're a pink pony girl And you dance at the club Oh mama I'm just having fun",
+    "On the edge of your knife stayin' drunk on your vine. The angels up in the clouds are jealous knowin' we found",
+    "Someone pour me up a double shot of whiskey They know me and Jack Daniel's got a history There's a party downtown near 5th Street",
+    "I lose control When you're not next to me I’m fallin’ apart right in front of you can't you see",
+    "Don't ask for all your things back cussin' out my name yeah Just to go and take back what you say Burn all the bridges, don't ask forgiveness",
+    "I want you I need you oh God Don't take These beautiful things that I've got Please stay",
+    "You say I'll never change I'm just a go around town with some gasoline Just tryin' to bum a flame Gonna burn the whole place down",
 ]
 
 artists = [
@@ -49,7 +48,7 @@ def UI():
     except ValueError:
         print('INPUT ERROR')
         UI()
-
+    print('\n')
     if opt == '1':
         score = 0
         for i in range(int(rounds)):
@@ -103,8 +102,6 @@ def guessSong():
 def finishLyric():
     r = random.randint(0,len(songs)-1)
     full = lyrics[r]
-
-    print(full)
 
     words = lyrics[r].split()
     missing = random.randint(0,len(words)-1)
