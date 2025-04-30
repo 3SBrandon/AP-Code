@@ -58,7 +58,7 @@ def UI():
     if opt == 1:
         score = 0
         for i in range(int(rounds)):
-            score = score + finishLyric()
+            score = finishLyric(score)
             print(f'Score: {score}')
             print('\n')
         print(f'Your final score is: {score}')
@@ -66,7 +66,7 @@ def UI():
     elif opt == 2:
         score = 0
         for i in range(int(rounds)):
-            score = score + guessSong()
+            score = guessSong(score)
             print(f'Score: {score}')
             print('\n')
         print(f'Your final score is: {score}')
@@ -74,7 +74,7 @@ def UI():
     elif opt == 3:
         score = 0
         for i in range(int(rounds)):
-            score = score + guessArtist()
+            score = guessArtist(score)
             print(f'Score: {score}')
             print('\n')
         print(f'Your final score is: {score}')
@@ -94,7 +94,7 @@ def again():
         print('INPUT ERROR')
         again()
 
-def guessSong():
+def guessSong(score):
     r = random.randint(0,len(songs)-1)
     print(lyrics[r])
     question = input('What song is this from (Type "HINT" to get one): ')
@@ -102,13 +102,12 @@ def guessSong():
         question = input(f'HINT - This lyric is by "{artists[r]}".\nWhat song is this lyric from: ' )
     if question.upper() == songs[r].upper():
         print('Correct')
-        point = 1
+        score = score + 1
     else: 
         print('Incorect')
-        point = 0
-    return point
+    return score
 
-def finishLyric():
+def finishLyric(score):
     r = random.randint(0,len(songs)-1)
     full = lyrics[r]
 
@@ -123,13 +122,12 @@ def finishLyric():
         question = input(f'HINT - This lyric is from the song "{songs[r]}".\nWhat is the missing word in the lyric: ')
     if question.upper() == answer:
         print('Correct')
-        point = 1
+        score = score + 1
     else:
         print('Incorrect')
-        point = 0
-    return point
+    return score
 
-def guessArtist():
+def guessArtist(score):
     r = random.randint(0,len(artists)-1)
     answer = artists[r]
     print(songs[r])
@@ -138,11 +136,10 @@ def guessArtist():
         question = input(f'HINT - A lyric from the song is "{lyrics[r]}". Who made this song: ')
     if question.upper() == answer.upper():
         print('Correct')
-        point = 1
+        score = score + 1
     else:
         print('Incorect')
-        point = 0
-    return point
+    return score
     
 UI()
 
