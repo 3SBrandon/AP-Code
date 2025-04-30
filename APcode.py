@@ -39,50 +39,6 @@ artists = [
     "Morgan Wallen",
 ]
 
-def UI():
-    opt = input('What game would you like to play. 1)Finish the lyric 2)Guess the song or 3)Guess the artist: ')
-    try:
-        opt = int(opt)
-    except ValueError:
-        print('INPUT ERROR')
-        UI()
-
-    rounds = input('How many rounds would you like to play: ')
-    try:
-        rounds = int(rounds)
-    except ValueError:
-        print('INPUT ERROR')
-        UI()
-
-    print('\n')
-    if opt == 1:
-        score = 0
-        for i in range(int(rounds)):
-            score = finishLyric(score)
-            print(f'Score: {score}')
-            print('\n')
-        print(f'Your final score is: {score}')
-        again()
-    elif opt == 2:
-        score = 0
-        for i in range(int(rounds)):
-            score = guessSong(score)
-            print(f'Score: {score}')
-            print('\n')
-        print(f'Your final score is: {score}')
-        again()
-    elif opt == 3:
-        score = 0
-        for i in range(int(rounds)):
-            score = guessArtist(score)
-            print(f'Score: {score}')
-            print('\n')
-        print(f'Your final score is: {score}')
-        again()
-    else: 
-        print('ERROR')
-        UI()
-
 def again():
     quben = input('Do you want to play another game? Yes or No: ').upper()
     if quben == 'YES':
@@ -141,6 +97,49 @@ def guessArtist(score):
         print('Incorect')
     return score
     
+def UI():
+    opt = input('What game would you like to play. 1)Finish the lyric 2)Guess the song or 3)Guess the artist: ')
+    try:
+        opt = int(opt)
+    except ValueError:
+        print('INPUT ERROR')
+        UI()
+
+    rounds = input('How many rounds would you like to play: ')
+    try:
+        rounds = int(rounds)
+    except ValueError:
+        print('INPUT ERROR')
+        UI()
+
+    print('\n')
+    if opt == 1:
+        score = 0
+        for i in range(int(rounds)):
+            score = finishLyric(score)
+            print(f'Score: {score}')
+            print('\n')
+        print(f'Your final score is: {score}')
+        again()
+    elif opt == 2:
+        score = 0
+        for i in range(int(rounds)):
+            score = guessSong(score)
+            print(f'Score: {score}')
+            print('\n')
+        print(f'Your final score is: {score}')
+        again()
+    elif opt == 3:
+        score = 0
+        for i in range(int(rounds)):
+            score = guessArtist(score)
+            print(f'Score: {score}')
+            print('\n')
+        print(f'Your final score is: {score}')
+        again()
+    else: 
+        print('ERROR')
+        UI()
 UI()
 
 
