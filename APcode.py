@@ -94,19 +94,6 @@ def again():
         print('INPUT ERROR')
         again()
 
-def guessSong(score):
-    r = random.randint(0,len(songs)-1)
-    print(lyrics[r])
-    question = input('What song is this from (Type "HINT" to get one): ')
-    if question == 'HINT':
-        question = input(f'HINT - This lyric is by "{artists[r]}".\nWhat song is this lyric from: ' )
-    if question.upper() == songs[r].upper():
-        print('Correct')
-        score = score + 1
-    else: 
-        print('Incorect')
-    return score
-
 def finishLyric(score):
     r = random.randint(0,len(songs)-1)
     full = lyrics[r]
@@ -125,6 +112,19 @@ def finishLyric(score):
         score = score + 1
     else:
         print('Incorrect')
+    return score
+
+def guessSong(score):
+    r = random.randint(0,len(songs)-1)
+    print(lyrics[r])
+    question = input('What song is this from (Type "HINT" to get one): ')
+    if question == 'HINT':
+        question = input(f'HINT - This lyric is by "{artists[r]}".\nWhat song is this lyric from: ' )
+    if question.upper() == songs[r].upper():
+        print('Correct')
+        score = score + 1
+    else: 
+        print('Incorect')
     return score
 
 def guessArtist(score):
